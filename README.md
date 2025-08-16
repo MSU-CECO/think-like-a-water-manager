@@ -1,1 +1,5 @@
-# think-like-a-water-manager
+# Logical and Mathematical Reasoning Assessment of Thinking Models
+This repository supplements the methodologies and findings of the paper [Can AI Think Like an AWM?]().
+
+## Note:
+The code will be made available upon publication.
