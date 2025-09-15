@@ -1,5 +1,5 @@
 # Logical and Mathematical Reasoning Assessment of Thinking Models
-This repository supplements the methodologies and findings of the paper [Can AI Think Like an AWM?]().
+This repository supplements the methodologies and findings of the paper [Can AI Think Like an AWM?](), which is currently under review.
 
 ## Note:
-The code will be made available upon publication.
+Datasets will be made available upon publication.
