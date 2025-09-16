@@ -1,0 +1,14 @@
+[
+  {
+    "domain_id": "eaefc9c9-196b-485f-8ce4-57b3941668f4",
+    "problem_id": "7033b7dd-2cfd-451e-86c3-9d99b0688eca",
+    "category": "types of irrigation systems",
+    "subcategory": "primary types",
+    "question": "Which option is the correct combination of primary irrigation systems used on farms?",
+    "answer_truth": "surface; sprinkler; microirrigation; subirrigation",
+    "answer_option_A": "solid-set sprinkler; microirrigation; furrow; surface",
+    "answer_option_B": "solid-set sprinkler; travelling gun; furrow; basin; subirrigation",
+    "answer_option_C": "furrow; basin; travelling gun",
+    "knowledge_context": "(primary types) -[CONTAINS_CONCEPT]-> (surface irrigation)\n(primary types) -[INCLUDES]-> (sprinkler irrigation)\n(primary types) -[INCLUDES]-> (microirrigation)\n(primary types) -[INCLUDES]-> (subirrigation)\n(primary types) -[CONTAINS_CONCEPT]-> (pod-line irrigation)\n(primary types) -[CONTAINS_CONCEPT]-> (low-pressure traveling irrigators)\n(primary types) -[CONTAINS_CONCEPT]-> (high-pressure traveling guns)\n(primary types) -[CONTAINS_CONCEPT]-> (center pivots)\n(tradeoffs) -[CONTAINS_CONCEPT]-> (sprinkler irrigation)\n(tradeoffs) -[EVALUATES_SYSTEM]-> (surface irrigation)\n(tradeoffs) -[CONTAINS_CONCEPT]-> (microirrigation)\n(types of irrigation systems) -[HAS_SUBCATEGORY]-> (primary types)\n(types of irrigation systems) -[HAS_SUBCATEGORY]-> (surface irrigation)\n(types of irrigation systems) -[HAS_SUBCATEGORY]-> (sprinkler irrigation)\n(types of irrigation systems) -[HAS_SUBCATEGORY]-> (microirrigation)\n(types of irrigation systems) -[HAS_SUBCATEGORY]-> (subirrigation)\n(types of irrigation systems) -[HAS_SUBCATEGORY]-> (tradeoffs)\n(sprinkler irrigation) -[CONTAINS_CONCEPT]-> (center pivots)"
+  }
+]

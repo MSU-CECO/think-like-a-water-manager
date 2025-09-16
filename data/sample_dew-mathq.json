@@ -1,0 +1,273 @@
+[
+  {
+    "domain_id": "is_ex03",
+    "problem_id": "is_ex03_02_35fce2c7",
+    "is_original_version": true,
+    "domain": "irrigation scheduling",
+    "topics": [
+      "soil water maintenance",
+      "irrigation date/length",
+      "minimum allowable balance approach"
+    ],
+    "difficulty_level": "hard",
+    "gold_problem": "In Minnesota, during the growing season in June, a field of grains is cultivated on fine sandy loam soil with an available water capacity of 0.13 dimensionless_unit. Soil moisture monitoring using the feel and appearance method indicates that the average fraction of available water remaining in the root zone is 0.8. The root zone depth is 24 inches, and the evapotranspiration (ET) rate for the unstressed crop is 0.3 in/d. Crops like wheat, classified under \"Crop Group #3,\" have a maximum allowable fraction depletion of 0.4 for the given ET value. Assuming the soil is non-layered, the fraction of available water depleted is 0.2, and the forecasted daily ET is 0.3 in/day.  \n\nQuestion: Determine the latest day for irrigation using the minimum allowable balance approach.",
+    "gold_solution_reasoning_steps": [
+      "Step #1: Using equation total_available_water\nEquation: \\text{TAW} = \\text{AWC} \\cdot R_d\nSubstituting: AWC = 0.13, R_d = 24\nResult: TAW = 3.12 inch\n",
+      "Step #2: Using equation available_water_for_nonlayeredsoils_v2\nEquation: AW = AWC R_{d} f_{r}\nSubstituting: AWC = 0.13, f_r = 0.8, R_d = 24\nResult: AW = 2.5 inch\n",
+      "Step #3: Using equation critical_threshold_when_stress_begins\nEquation: f_{rc} = 1 - f_{dc}\nSubstituting: f_dc = 0.4\nResult: f_rc = 0.6 dimensionless\n",
+      "Step #4: Using equation min_balance_or_allowable_soil_moisture\nEquation: MB = TAW f_{rc}\nSubstituting: TAW = 3.12, f_rc = 0.6\nResult: MB = 1.87 inch\n",
+      "Step #5: Using equation latest_date_for_irrigation_balance_approach\nEquation: LD = \\left\\lceil{\\frac{AW - MB}{ET_{f}}}\\right\\rceil\nSubstituting: ET_f = 0.3, AW = 2.5, MB = 1.87\nResult: LD = 3 day\n"
+    ],
+    "gold_solution_final_response": {
+      "LD": {
+        "value": 3,
+        "unit": "day"
+      }
+    },
+    "hint_for_reasoning": {
+      "equations": {
+        "eq_critical_threshold_when_stress_begins": {
+          "name": "critical_threshold_when_stress_begins",
+          "latex": "f_{rc} = 1 - f_{dc}",
+          "variables": [
+            {
+              "unit": "dimensionless",
+              "unit_latex": "",
+              "description": "max_allowable_frac_depletion_of_available_soil_moisture",
+              "name": "f_dc"
+            },
+            {
+              "unit": "dimensionless",
+              "unit_latex": "",
+              "description": "critical_threshold_when_stress_begins",
+              "name": "f_rc"
+            }
+          ]
+        },
+        "eq_total_available_water": {
+          "name": "total_available_water",
+          "latex": "\\text{TAW} = \\text{AWC} \\cdot R_d",
+          "variables": [
+            {
+              "unit": "inch",
+              "unit_latex": "\\text{inch}",
+              "description": "depth_plant_root_zone",
+              "name": "R_d"
+            },
+            {
+              "unit": "foot",
+              "unit_latex": "\\text{ft}",
+              "description": "depth_plant_root_zone",
+              "name": "R_d"
+            },
+            {
+              "unit": "centimeter",
+              "unit_latex": "\\text{cm}",
+              "description": "depth_plant_root_zone",
+              "name": "R_d"
+            },
+            {
+              "unit": "inch",
+              "unit_latex": "\\text{inch}",
+              "description": "available water capacity",
+              "name": "AWC"
+            },
+            {
+              "unit": "dimensionless",
+              "unit_latex": "",
+              "description": "available water capacity",
+              "name": "AWC"
+            },
+            {
+              "unit": "inch",
+              "unit_latex": "\\text{inch}",
+              "description": "total_available_water",
+              "name": "TAW"
+            },
+            {
+              "unit": "centimeter",
+              "unit_latex": "\\text{cm}",
+              "description": "total_available_water",
+              "name": "TAW"
+            }
+          ]
+        },
+        "eq_min_balance_or_allowable_soil_moisture": {
+          "name": "min_balance_or_allowable_soil_moisture",
+          "latex": "MB = TAW f_{rc}",
+          "variables": [
+            {
+              "unit": "inch",
+              "unit_latex": "\\text{inch}",
+              "description": "total_available_water",
+              "name": "TAW"
+            },
+            {
+              "unit": "centimeter",
+              "unit_latex": "\\text{cm}",
+              "description": "total_available_water",
+              "name": "TAW"
+            },
+            {
+              "unit": "dimensionless",
+              "unit_latex": "",
+              "description": "critical_threshold_when_stress_begins",
+              "name": "f_rc"
+            },
+            {
+              "unit": "inch",
+              "unit_latex": "\\text{inch}",
+              "description": "min_balance_or_allowable_soil_moisture",
+              "name": "MB"
+            }
+          ]
+        },
+        "eq_available_water_for_nonlayeredsoils_v2": {
+          "name": "available_water_for_nonlayeredsoils_v2",
+          "latex": "AW = AWC R_{d} f_{r}",
+          "variables": [
+            {
+              "unit": "inch",
+              "unit_latex": "\\text{inch}",
+              "description": "depth_plant_root_zone",
+              "name": "R_d"
+            },
+            {
+              "unit": "foot",
+              "unit_latex": "\\text{ft}",
+              "description": "depth_plant_root_zone",
+              "name": "R_d"
+            },
+            {
+              "unit": "centimeter",
+              "unit_latex": "\\text{cm}",
+              "description": "depth_plant_root_zone",
+              "name": "R_d"
+            },
+            {
+              "unit": "inch",
+              "unit_latex": "\\text{inch}",
+              "description": "available water capacity",
+              "name": "AWC"
+            },
+            {
+              "unit": "dimensionless",
+              "unit_latex": "",
+              "description": "available water capacity",
+              "name": "AWC"
+            },
+            {
+              "unit": "percent",
+              "unit_latex": "\\%",
+              "description": "fraction_available_water_remaining",
+              "name": "f_r"
+            },
+            {
+              "unit": "inch",
+              "unit_latex": "\\text{inch}",
+              "description": "available_water",
+              "name": "AW"
+            }
+          ]
+        },
+        "eq_latest_date_for_irrigation_balance_approach": {
+          "name": "latest_date_for_irrigation_balance_approach",
+          "latex": "LD = \\left\\lceil{\\frac{AW - MB}{ET_{f}}}\\right\\rceil",
+          "variables": [
+            {
+              "unit": "inch/day",
+              "unit_latex": "\\frac{\\text{inch}}{\\text{day}}",
+              "description": "forecasted_daily_et",
+              "name": "ET_f"
+            },
+            {
+              "unit": "inch",
+              "unit_latex": "\\text{inch}",
+              "description": "min_balance_or_allowable_soil_moisture",
+              "name": "MB"
+            },
+            {
+              "unit": "inch",
+              "unit_latex": "\\text{inch}",
+              "description": "available_water",
+              "name": "AW"
+            },
+            {
+              "unit": "day",
+              "unit_latex": "\\text{day}",
+              "description": "latest_date_for_irrigation_application",
+              "name": "LD"
+            },
+            {
+              "unit": "dimensionless",
+              "unit_latex": "",
+              "description": "latest_date_for_irrigation_application",
+              "name": "LD"
+            }
+          ]
+        }
+      },
+      "terms": {},
+      "solution_path": [
+        {
+          "target": "TAW",
+          "equations": [
+            "eq_total_available_water"
+          ]
+        },
+        {
+          "target": "AW",
+          "equations": [
+            "eq_available_water_for_nonlayeredsoils_v2"
+          ]
+        },
+        {
+          "target": "f_rc",
+          "equations": [
+            "eq_critical_threshold_when_stress_begins"
+          ]
+        },
+        {
+          "target": "MB",
+          "equations": [
+            "eq_min_balance_or_allowable_soil_moisture"
+          ]
+        },
+        {
+          "target": "LD",
+          "equations": [
+            "eq_latest_date_for_irrigation_balance_approach"
+          ]
+        }
+      ]
+    },
+    "additional_references": [],
+    "multiple_choice_options": {
+      "LD": {
+        "options": [
+          {
+            "value": 1,
+            "unit": "day",
+            "is_correct": false
+          },
+          {
+            "value": 9,
+            "unit": "day",
+            "is_correct": false
+          },
+          {
+            "value": 3,
+            "unit": "day",
+            "is_correct": true
+          },
+          {
+            "value": 5,
+            "unit": "day",
+            "is_correct": false
+          }
+        ],
+        "correct_index": 2
+      }
+    }
+  }
+]
