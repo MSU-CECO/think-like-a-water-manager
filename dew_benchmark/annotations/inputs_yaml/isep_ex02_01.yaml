@@ -1,0 +1,129 @@
+- id: isep_ex02_01
+  problem_category:
+  - irrigation system evaluation procedures
+  - graded furrow irrigation system
+  - present and potential irrigation management
+  - annual cost savings
+  difficulty_level: medium
+  multiple_choice:
+    enabled: true
+    num_options: 4
+    format: multiple_answers
+    show_units: true
+    randomize_order: true
+  citation:
+    book_title: "Irrigation Guide"
+    authors: "USDA"
+    year: 1997
+  base_text: "\nCorn (sileage) is being grown on a {TIA}-acres farm in an area with
+    a loamy soil texture. Its actual root zone depth is about 3.9 inches and the management
+    allowable depletion is 3.8 inches. A graded furrow irrigation system is operating
+    on the farm. The farmer reported that the number of irrigations per year is {NIRF}
+    (irrigation duration: {TID} hours, frequency: {TIF} days). The furrow length is
+    {FL} {FL_unit} and the spacing is {FS} {FS_unit} with an average slope of 0.013
+    feet/feet.\nAssume that the present gross depth of irrigation applied is {PGDA}
+    {PGDA_unit}. For potential irrigation amangement, assume that the annual net irrigation
+    requirement is {ANIR} inches with a potential application efficiency estimated
+    at {PAE}%.\n\n- Question 1: Determine the potential gross irrigation applied by
+    the end of the year. \n- Question 2: Find the total annual water conserved (i.e.,
+    the acre feet conserved per year). \n- Question 3: Find the total costs related
+    to pumping by the end of the year. \n- Question 4: Find the annual water purchase
+    cost. \n- Question 5: What would be the total cost savings by the end of the year
+    (if only onsidering costs related to pumping and water purchase)? "
+  problem_text: "In Missouri, a {TIA}-acre farm is used for corn (sileage) during the summer
+    season, with a loamy soil profile. The root zone depth measures 3.9 inches, and
+    the management allowable depletion is 3.8 inches. A graded furrow irrigation system
+    operates, with {NIRF} annual irrigations (each lasting {TID} hours, spaced {TIF}
+    days apart). Furrow length is {FL} {FL_unit}, spacing {FS} {FS_unit}, and an average
+    slope of 0.013 feet/feet. The gross irrigation depth applied is {PGDA} {PGDA_unit},
+    while the annual net irrigation requirement is {ANIR} inches, with a potential
+    application efficiency of {PAE}%.  \n\nQuestion: What would be the total cost
+    savings by the end of the year (if only considering costs related to pumping and
+    water purchase)?"
+  question_text: What would be the total cost savings by the end of the year (if
+    only considering costs related to pumping and water purchase)?
+  alternative_phrasings:
+  - TO_DO
+  variables:
+    TIA:
+      min: 100
+      max: 150
+      default_unit: acres
+      is_constant: false
+    NIRF:
+      min: 8
+      max: 12
+      default_unit: dimensionless_unit
+      is_constant: false
+    TID:
+      min: 11
+      max: 17
+      default_unit: hours
+      is_constant: false
+    TIF:
+      min: 14
+      max: 20
+      default_unit: days
+      is_constant: false
+    FL:
+      min: 1300
+      max: 1800
+      default_unit: feet
+      is_constant: false
+    FS:
+      min: 30
+      max: 50
+      default_unit: inches
+      is_constant: false
+    PAE:
+      min: 70
+      max: 75
+      default_unit: percentage
+      is_constant: false
+    CPAF:
+      min: 0
+      max: 0
+      default_unit: dollar
+      is_constant: true
+    ANIR:
+      min: 20.6
+      max: 26
+      default_unit: inches
+      is_constant: false
+    FCPAF:
+      min: 0
+      max: 0
+      default_unit: dollar
+      is_constant: true
+    PGDA:
+      min: 6.8
+      max: 9
+      default_unit: inches
+      is_constant: false
+  equations_used:
+  - eq_present_gross_irrigation_applied_per_year_using_depth_applied
+  - eq_potential_gross_irrigation_applied_per_year
+  - eq_total_annual_water_saved
+  - eq_total_water_purchase_cost_per_year
+  - eq_total_pumping_cost_per_year_based_on_fuel
+  - eq_total_cost_savings_per_year_based_on_water_and_pumping
+  target_variables:
+  - PEGIAPY
+  - POGIAPY
+  - AFSPY
+  - TWPCPY
+  - TPCPY
+  - TCSPY
+  final_target_variable:
+  - TCSPY
+  manual_hints:
+    override_auto_hints: false
+    content:
+      conceptual_explanation: ""
+      key_insight: "Both the cost of water purchase per acre foot and the fuel (e.g.,
+        electric) cost per acre foot will be 0 since it's furrow irrigation."
+      step_guidance:
+      - ""
+      - ""
+      common_mistakes:
+      - ""

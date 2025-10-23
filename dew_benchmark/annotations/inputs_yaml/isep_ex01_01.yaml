@@ -1,0 +1,121 @@
+- id: isep_ex01_01
+  problem_category:
+  - irrigation system evaluation procedures
+  - graded border irrigation system
+  - present and potential irrigation management
+  - annual cost savings
+  difficulty_level: medium
+  multiple_choice:
+    enabled: true
+    num_options: 4
+    format: multiple_answers
+    show_units: true
+    randomize_order: true
+  citation:
+    book_title: "Irrigation Guide"
+    authors: "USDA"
+    year: 1997
+  base_text: " Consider a {TIA} acres farm where alfafa is being grown. The management
+    allowed deficit is at 3.59% and the typical irrigation duration is {TID} every
+    {TIF} days (using a surface irigation system). But assume that irrigation was
+    applied a total of {NIRF} times by the end of the year. A graded furrow border
+    system is operating on the farm: its border spacing: 31', strip width: 27', and
+    wetted width and length are 30' and 699' respectively. The estimated current average
+    net application per irrigation is {PANAPI} inches with an application efficiency
+    at {PIEA}%. For potential irrigation amangement for alfafa, assume that the annual
+    net irrigation requirement is {ANIR} inches with a potential application efficiency
+    estimated at {PAE}%. The fuel (i.e., electric) cost per acre foot is $ {FCPAF}
+    - note that the cost per unit of fuel was about 6.99 cents kwh and the pumping
+    plant efficiency about 60%. The cost of water purchase per acre foot: {CPAF}.\n\
+    \n- Question 1: Determine the potential gross irrigation applied by the end of
+    the year. \n- Question 2: Find the total annual water conserved (i.e., the acre
+    feet conserved per year). \n- Question 3: Find the total costs related to pumping
+    by the end of the year. \n- Question 4: Find the annual water purchase cost. \n\
+    - Question 5: What would be the total cost savings by the end of the year (if
+    only onsidering costs related to pumping and water purchase)? "
+  problem_text: " A Virginia-based farm, known for raising chicken, spans across {TIA} acres, which is used for producing grains and alfalfa under a surface irrigation system. 
+                The management allows for a deficit of 3.59%, and the typical irrigation cycle occurs every {TIF} days, lasting {TID} hours per application. However, by the end of the year, irrigation was actually applied {NIRF} times. The farm utilizes a graded furrow border system, with a border spacing of 31 feet, strip width of 27 feet, and wetted dimensions of 30 feet wide and 699 feet long.
+                The current average net application depth per irrigation is recorded at {PANAPI} inches, with an application efficiency of {PIEA} %. For potential irrigation improvements, the annual net irrigation requirement for alfalfa is estimated to be {ANIR} inches, with a projected application efficiency of {PAE}% . 
+                Energy considerations include a fuel cost of $ {FCPAF} per acre-foot, based on an electricity rate of 6.99 cents per kilowatt-hour and a pumping plant efficiency of 60%. Additionally, the cost of water purchase stands at {CPAF} dollars per acre-foot.
+                \nQuestion: What would be the total cost savings achieved by the end of the year if only the pumping and water purchase costs are considered?
+              s "
+  question_text: "Question: What would be the total cost savings achieved by the end of the year if only the pumping and water purchase costs are considered?"
+  alternative_phrasings:
+  - TO_DO
+  variables:
+    NIRF:
+      min: 12
+      max: 20
+      default_unit: dimensionless_unit
+      is_constant: false
+    TID:
+      min: 1.5
+      max: 2.5
+      default_unit: hours
+      is_constant: false
+    TIF:
+      min: 14
+      max: 20
+      default_unit: days
+      is_constant: false
+    PANAPI:
+      min: 3
+      max: 6
+      default_unit: days
+      is_constant: false
+    TIA:
+      min: 40
+      max: 51
+      default_unit: acres
+      is_constant: false
+    PIEA:
+      min: 62
+      max: 70
+      default_unit: percentage
+      is_constant: false
+    ANIR:
+      min: 22.1
+      max: 26
+      default_unit: inches
+      is_constant: false
+    PAE:
+      min: 70
+      max: 75
+      default_unit: percentage
+      is_constant: false
+    FCPAF:
+      min: 14.33
+      max: 16.5
+      default_unit: dollar
+      is_constant: false
+    CPAF:
+      min: 12
+      max: 15
+      default_unit: dollar
+      is_constant: false
+  equations_used:
+  - eq_present_gross_irrigation_applied_per_year
+  - eq_potential_gross_irrigation_applied_per_year
+  - eq_total_annual_water_saved
+  - eq_total_water_purchase_cost_per_year
+  - eq_total_pumping_cost_per_year_based_on_fuel
+  - eq_total_cost_savings_per_year_based_on_water_and_pumping
+  target_variables:
+  - PEGIAPY
+  - POGIAPY
+  - AFSPY
+  - TWPCPY
+  - TPCPY
+  - TCSPY
+  final_target_variable:
+  - TCSPY
+  manual_hints:
+    override_auto_hints: false
+    content:
+      conceptual_explanation: ""
+      key_insight: ""
+      step_guidance:
+      - ""
+      - ""
+      common_mistakes:
+      - ""

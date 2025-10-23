@@ -1,0 +1,102 @@
+- id: ee_ex02_01
+  problem_category:
+  - economic evaluations
+  - benefits analysis
+  - center pivot sprinkler irrigation system
+  difficulty_level: hard
+  multiple_choice:
+    enabled: true
+    num_options: 4
+    format: multiple_answers
+    show_units: true
+    randomize_order: true
+  citation:
+    book_title: "Irrigation Guide"
+    authors: "USDA"
+    year: 1997
+  base_text: "\nA farmer is planning to install a center pivot sprinkler irrigation
+    system on his corn field farm ({TIA} acres). There is no existing irrigation system.
+    After considering the installation (pivot, sprinklers, pump, motor, etc.), contingencies
+    and tax fees, the total cost for setting up the system was estimated to be ${TECOIS}.
+    From there, the ownership cost per year has been estimated: ${OCPY}. As for the
+    operating costs (per a unit of acre), those related to the electric power consumption
+    amounted to ${OPCDEP}, repair and maintenance-related costs were ${OPCDRM}. Consider
+    ${OPCO} to cover the increased costs of oil, fertilizer, chemicals, labor, etc.
+    required to obtain the {TIA} bushel increase in yield.\nNote that the unit price
+    asssociated with the expected increase of yield from irrigation is ${UPEI}.\n\n\
+    - Question 1: What is the gross value per acre of expected increase from irrigation?\
+    \ \n- Question 2: What is the total increased ownership costs per acre? \n- Question
+    3: What is the total increased operating costs per acre? \n- Question 4: What
+    is the total average annual cost increase per acre? \n- Question 5: What will
+    be the expected average annual increase in net income per acre? "
+  problem_text: "In Illinois, a farmer is planning to install a center pivot sprinkler
+    irrigation system on a corn field covering {TIA} acres during the growing season
+    of May to September. The total setup cost is estimated at ${TECOIS}, with annual
+    ownership costs of ${OCPY}. Operating costs include ${OPCDEP} for power, ${OPCDRM}
+    for maintenance, and ${OPCO} for additional expenses. The expected yield increase
+    is {TIA} bushels, with a unit price of ${UPEI}.  \n\nQuestion: What will be the
+    expected average annual increase in net income per acre?"
+  question_text: What will be the expected average annual increase in net income
+    per acre?
+  alternative_phrasings:
+  - TO_DO
+  variables:
+    TIA:
+      min: 130
+      max: 190
+      default_unit: bu/ac
+      is_constant: false
+    UPEI:
+      min: 2.67
+      max: 3
+      default_unit: dollar
+      is_constant: false
+    TECOIS:
+      min: 100100
+      max: 125000
+      default_unit: dollar
+      is_constant: false
+    OCPY:
+      min: 21778
+      max: 35000
+      default_unit: dollar
+      is_constant: false
+    OPCDEP:
+      min: 72
+      max: 85
+      default_unit: dollar
+      is_constant: false
+    OPCDRM:
+      min: 12
+      max: 20
+      default_unit: dollar
+      is_constant: false
+    OPCO:
+      min: 66
+      max: 89
+      default_unit: dollar
+      is_constant: false
+  equations_used:
+  - eq_gross_value_per_acre_expected_increase_from_irrigation
+  - eq_increased_ownership_fixed_cost_per_acre
+  - eq_total_increased_operating_costs_per_acre
+  - eq_total_average_annual_costs_increased_per_acre
+  - eq_expected_average_annual_increase_in_net_icome_per_acre
+  target_variables:
+  - GVPAEIFI
+  - IOFCPA
+  - TIOCPA
+  - TAACIPA
+  - EAAINIPA
+  final_target_variable:
+  - EAAINIPA
+  manual_hints:
+    override_auto_hints: false
+    content:
+      conceptual_explanation: ""
+      key_insight: ""
+      step_guidance:
+      - ""
+      - ""
+      common_mistakes:
+      - ""

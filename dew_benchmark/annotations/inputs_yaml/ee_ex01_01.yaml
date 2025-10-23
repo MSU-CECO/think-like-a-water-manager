@@ -1,0 +1,83 @@
+- id: ee_ex01_01
+  problem_category:
+  - economic evaluations
+  - energy savings
+  - sprinkler irrigation systems
+  difficulty_level: medium
+  multiple_choice:
+    enabled: true
+    num_options: 4
+    format: multiple_answers
+    show_units: true
+    randomize_order: true
+  citation:
+    book_title: "Irrigation Guide"
+    authors: "USDA"
+    year: 1997
+  base_text: " A sprinkler-based irrigation system is operating on a {TIA}-acres farm.
+    The operation pressure presently is {PRASC} {PRASC_unit} but later dropped to
+    {PRASA} {PRASA_unit} after conversion. The seasonal gross irrigation application
+    is {SGIA} {SGIA_unit} and the pumping plant overall estimated efficiency is {OPPE}
+    %. If the electric energy cost is $ {EEC} per kWh,\n\n- Question 1: What is the
+    seasonal energy savings? \n- Question 2: How much dollars will be saved per year? "
+  problem_text: "A sprinkler-based irrigation system is utilized on a {TIA}-acre farm
+    located in North Carolina, where broiler production and tomato cultivation coexist.
+    The system initially operates at {PRASC} {PRASC_unit} pressure but experiences
+    a reduction to {PRASA} {PRASA_unit} following a retrofit. The seasonal gross irrigation
+    application amounts to {SGIA} {SGIA_unit}, with the pumping plant achieving an
+    overall efficiency of {OPPE} %. Given the electric energy cost of $ {EEC} per
+    kWh,  \n\nQuestion: What is the annual monetary savings resulting from the pressure
+    adjustment?"
+  question_text: What is the annual monetary savings resulting from the pressure
+    adjustment?
+  alternative_phrasings:
+  - TO_DO
+  variables:
+    TIA:
+      min: 40
+      max: 70
+      default_unit: acres
+      is_constant: false
+    PRASC:
+      min: 55
+      max: 70
+      default_unit: lb/in²
+      is_constant: false
+    PRASA:
+      min: 35
+      max: 55
+      default_unit: lb/in²
+      is_constant: false
+    SGIA:
+      min: 18
+      max: 25
+      default_unit: ac-in/ac/yr
+      is_constant: false
+    OPPE:
+      min: 70
+      max: 85
+      default_unit: percentage
+      is_constant: false
+    EEC:
+      min: 0.04
+      max: 0.1
+      default_unit: kilowatts_hours
+      is_constant: false
+  equations_used:
+  - eq_seasonal_energy_savings
+  - eq_dollars_saved_on_electric_energy_cost_per_year
+  target_variables:
+  - SES
+  - DSOEECPY
+  final_target_variable:
+  - DSOEECPY
+  manual_hints:
+    override_auto_hints: false
+    content:
+      conceptual_explanation: ""
+      key_insight: ""
+      step_guidance:
+      - ""
+      - ""
+      common_mistakes:
+      - ""
