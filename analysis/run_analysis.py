@@ -8,7 +8,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_DIR = os.path.join(os.path.dirname(SCRIPT_DIR), 'data')
+DATA_DIR = os.path.join(SCRIPT_DIR, 'data')
 
 
 def setup_ieee_style():
@@ -141,6 +141,8 @@ def compute_foundation_metrics(df, dataset_name):
 def create_dataset_analysis_visualizations_split(math_stats, natqa_stats, dir_name="figures"):
     """Create dataset analysis visualizations split into two IEEE-compliant figures"""
     print("\n=== Creating Dataset Analysis Visualizations (Split) ===")
+
+    os.makedirs(dir_name, exist_ok=True)
     
     # FIGURE 0A: Bar Charts (Question Types and Text Lengths)
     fig_0a, ((ax1, ax2)) = plt.subplots(1, 2, figsize=(DOUBLE_COL, 3.5))
@@ -202,8 +204,10 @@ def create_dataset_analysis_visualizations_split(math_stats, natqa_stats, dir_na
     
     plt.tight_layout()
     plt.subplots_adjust(bottom=0.15)  # Make room for subfigure labels
-    plt.savefig(f'{dir_name}\\figure_dewmathq_dewlogiq_analysis_bars.pdf', dpi=300, bbox_inches='tight')
-    plt.savefig(f'{dir_name}\\figure_dewmathq_dewlogiq_analysis_bars.png', dpi=300, bbox_inches='tight')
+    pdf_f = os.path.join(dir_name, "figure_dewmathq_dewlogiq_analysis_bars.pdf")
+    png_f = os.path.join(dir_name, "figure_dewmathq_dewlogiq_analysis_bars.pdf")
+    plt.savefig(pdf_f, dpi=300, bbox_inches='tight')
+    plt.savefig(png_f, dpi=300, bbox_inches='tight')
     print("Figure 0a (Bar Charts) saved as PDF & PNG")
     
     # FIGURE 0B: Pie Charts (Domain/Category Distributions)
@@ -249,8 +253,10 @@ def create_dataset_analysis_visualizations_split(math_stats, natqa_stats, dir_na
     
     plt.tight_layout()
     plt.subplots_adjust(bottom=0.1)  # Make room for subfigure labels
-    plt.savefig(f'{dir_name}\\figure_0b_dewmathq_dewlogiq_analysis_pies.pdf', dpi=300, bbox_inches='tight')
-    plt.savefig(f'{dir_name}\\figure_0b_dewmathq_dewlogiq_analysis_pies.png', dpi=300, bbox_inches='tight')
+    pdf_f = os.path.join(dir_name, "figure_0b_dewmathq_dewlogiq_analysis_pies.pdf")
+    png_f = os.path.join(dir_name, "figure_0b_dewmathq_dewlogiq_analysis_pies.pdf")
+    plt.savefig(pdf_f, dpi=300, bbox_inches='tight')
+    plt.savefig(png_f, dpi=300, bbox_inches='tight')
     print("Figure 0b (Pie Charts) saved as PDF & PNG")
     
     return fig_0a, fig_0b
@@ -517,7 +523,8 @@ def run_phase_dataset_analysis(dew_math_ds_fpath, dew_natqa_ds_fpath):
 def create_domain_strategy_interaction_heatmap(math_domain_strategy, natqa_domain_strategy, dir_name="figures"):
     """Create Domain × Strategy interaction visualization"""
     print("\n=== Creating Domain × Strategy Interaction Heatmap ===")
-    
+    os.makedirs(dir_name, exist_ok=True)
+
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(DOUBLE_COL, 5))
     
     # DEW-MathQ: Domain × Strategy heatmap
@@ -570,8 +577,10 @@ def create_domain_strategy_interaction_heatmap(math_domain_strategy, natqa_domai
              fontsize=8, family='Times New Roman')
     
     plt.tight_layout()
-    plt.savefig(f'{dir_name}\\figure_domain_strategy_interactions.pdf', dpi=300, bbox_inches='tight')
-    plt.savefig(f'{dir_name}\\figure_domain_strategy_interactions.png', dpi=300, bbox_inches='tight')
+    pdf_f = os.path.join(dir_name, "figure_domain_strategy_interactions.pdf")
+    png_f = os.path.join(dir_name, "figure_domain_strategy_interactions.pdf")
+    plt.savefig(pdf_f, dpi=300, bbox_inches='tight')
+    plt.savefig(png_f, dpi=300, bbox_inches='tight')
     print("Figure_domain_strategy_interactions saved as PDF & PNG")
     
     return fig
@@ -751,6 +760,7 @@ def run_phase_domain_strategy_interactions(dew_math, dew_natqa):
 def create_figure_F_model_confidence_scatter(math_model_conf, natqa_model_conf, dir_name="figures"):
     """Part 1: Model Confidence vs Accuracy Scatter Plots with Manual Symbol Mapping"""
     print("\n===Part 1: Model Confidence Scatter Analysis ===")
+    os.makedirs(dir_name, exist_ok=True)
     
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(DOUBLE_COL, 3.5))
 
@@ -844,8 +854,10 @@ def create_figure_F_model_confidence_scatter(math_model_conf, natqa_model_conf, 
     ax2.text(0.5, -0.4, '(b)', transform=ax2.transAxes, ha='center', va='top', 
              fontsize=8, family='Times New Roman')    
     
-    plt.savefig(f'{dir_name}\\figure_F_part1_model_confidence_scatter.pdf', dpi=300, bbox_inches='tight')
-    plt.savefig(f'{dir_name}\\figure_F_part1_model_confidence_scatter.png', dpi=300, bbox_inches='tight')
+    pdf_f = os.path.join(dir_name, "figure_F_part1_model_confidence_scatter.pdf")
+    png_f = os.path.join(dir_name, "figure_F_part1_model_confidence_scatter.pdf")
+    plt.savefig(pdf_f, dpi=300, bbox_inches='tight')
+    plt.savefig(png_f, dpi=300, bbox_inches='tight')
     print("Figure F Part 1 saved with manual symbol mapping")
     
     # Print the symbol mapping for reference
@@ -860,6 +872,8 @@ def create_figure_F_model_calibration_comparison(math_model_conf, natqa_model_co
                                                 dir_name="figures"):
     """Model Calibration Quality Comparison"""
     print("\n===Model Calibration Comparison ===")
+
+    os.makedirs(dir_name, exist_ok=True)
     
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(DOUBLE_COL, 4))
     
@@ -974,8 +988,10 @@ def create_figure_F_model_calibration_comparison(math_model_conf, natqa_model_co
              fontsize=8, family='Times New Roman') 
         
     plt.tight_layout()
-    plt.savefig(f'{dir_name}\\figure_F_part2_model_calibration_comparison.pdf', dpi=300, bbox_inches='tight')
-    plt.savefig(f'{dir_name}\\figure_F_part2_model_calibration_comparison.png', dpi=300, bbox_inches='tight')
+    pdf_f = os.path.join(dir_name, "figure_F_part2_model_calibration_comparison.pdf")
+    png_f = os.path.join(dir_name, "figure_F_part2_model_calibration_comparison.pdf")
+    plt.savefig(pdf_f, dpi=300, bbox_inches='tight')
+    plt.savefig(png_f, dpi=300, bbox_inches='tight')
     print("Figure F saved as PDF & PNG")
     
     return fig
@@ -984,7 +1000,8 @@ def create_split_figure_F(math_model_conf, natqa_model_conf,
                           math_calibration, natqa_calibration, dir_name="figures"):
     """Create both parts of the split Figure F (supposed to be final/last plot)"""
     print("\n=== Creating Split Figure F ===")
-    
+    os.makedirs(dir_name, exist_ok=True)
+
     # Create Part 1: Scatter plots with symbol legend
     figF_part1 = create_figure_F_model_confidence_scatter(
         math_model_conf, natqa_model_conf, dir_name
@@ -1212,12 +1229,12 @@ def apply_naming_updates(dew_math_clean, dew_natqa_clean):
 
 if __name__ == "__main__": 
 
-    # 1. required data inputs
-    dew_math_ds_fpath = os.path(DATA_DIR, "sample_dew-mathq.json")
-    dew_natqa_ds_fpath = os.path(DATA_DIR, "sample_dew-logiq.json")
+    # 1. required data inputs for analysis 
+    dew_math_ds_fpath = os.path.join(DATA_DIR, "sample_dew-mathq.json")
+    dew_natqa_ds_fpath = os.path.join(DATA_DIR, "sample_dew-logiq.json")
 
-    dew_math_results_fpath = os.path(DATA_DIR, "sample_llm_performance_results_on_dew-mathq.csv")
-    dew_natqa_results_fpath = os.path(DATA_DIR, "sample_llm_performance_results_on_dew-logiq.csv")
+    dew_math_results_fpath = os.path.join(DATA_DIR, "sample_llm_performance_results_on_dew-mathq.csv")
+    dew_natqa_results_fpath = os.path.join(DATA_DIR, "sample_llm_performance_results_on_dew-logiq.csv")
 
     # 2. Analyses
 
