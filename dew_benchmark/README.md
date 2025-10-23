@@ -1,4 +1,4 @@
-
+# DEW Benchmark
 
 ## Copyright Notice & Dataset Sources
 
@@ -21,7 +21,7 @@ The DEW dataset splits rely on equations, definitions, concepts, and sample exer
 Due to licensing and copyright issues, this repository only reflects information related to Book #1. As of the creation of this repositpry, Books #2 and #3 are still accessible and available online, at their provided link, for the inspection of all. As such, none of their contents are reflected in any shape or form here.
 
 
-## DEW Dataset Creation
+## Dataset Splits Creation
 
 The DEW-LogiQ split is the continuation of the AgXQA V1 dataset, whose original data sources and creation process (e.g., curation, annotations, etc.)  have been detailed [here](https://huggingface.co/datasets/msu-ceco/agxqa_v1). Compared to AgXQA, DEW-LogiQ is a multiple-choice based QA dataset. It is available [here](). 
 
