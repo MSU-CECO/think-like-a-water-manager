@@ -18,7 +18,7 @@ The DEW dataset splits rely on equations, definitions, concepts, and sample exer
     * Authors's License Statement: **“This work is licensed under a Creative Commons Attribution 4.0 International License (CC BY-NC-ND).”**
 
 
-Due to licensing and copyright issues, this repository only reflects information related to Book #1. As of the creation of this repositpry, Books #2 and #3 are still accessible and available online, at their provided link, for the inspection of all. As such, none of their contents are reflected in any shape or form here.
+Due to licensing and copyright issues, this repository only reflects information related to Book #1. As of the time of creation of this repository, Books #2 and #3 are still accessible and available online, at their provided link, for the inspection of all.
 
 
 ## Dataset Splits Creation
