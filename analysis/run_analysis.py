@@ -4,17 +4,24 @@ from collections import Counter
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib import font_manager
 import warnings
 warnings.filterwarnings('ignore')
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(SCRIPT_DIR, 'data')
 
+available_fonts = [f.name for f in font_manager.fontManager.ttflist]
+if 'Times New Roman' not in available_fonts:
+    FALLBACK_FONT = 'DejaVu Serif'  # You can choose another font here
+    print("Warning: 'Times New Roman' not found. Using fallback font:", FALLBACK_FONT)
+else:
+    FALLBACK_FONT = 'Times New Roman'
 
 def setup_ieee_style():
     """Configure matplotlib for IEEE journal compliance"""
     plt.rcParams.update({
-        'font.family': 'Times New Roman',
+        'font.family': FALLBACK_FONT,
         'font.size': 9,
         'axes.labelsize': 9,
         'axes.titlesize': 10,
@@ -198,9 +205,9 @@ def create_dataset_analysis_visualizations_split(math_stats, natqa_stats, dir_na
     
     # Add IEEE subfigure labels
     ax1.text(0.5, -0.25, '(a)', transform=ax1.transAxes, ha='center', va='top', 
-             fontsize=8, family='Times New Roman')
+             fontsize=8, family=FALLBACK_FONT)
     ax2.text(0.5, -0.25, '(b)', transform=ax2.transAxes, ha='center', va='top', 
-             fontsize=8, family='Times New Roman')
+             fontsize=8, family=FALLBACK_FONT)
     
     plt.tight_layout()
     plt.subplots_adjust(bottom=0.15)  # Make room for subfigure labels
@@ -247,9 +254,9 @@ def create_dataset_analysis_visualizations_split(math_stats, natqa_stats, dir_na
     
     # Add IEEE subfigure labels
     ax3.text(0.5, -0.15, '(a)', transform=ax3.transAxes, ha='center', va='top', 
-             fontsize=8, family='Times New Roman')
+             fontsize=8, family=FALLBACK_FONT)
     ax4.text(0.5, -0.15, '(b)', transform=ax4.transAxes, ha='center', va='top', 
-             fontsize=8, family='Times New Roman')
+             fontsize=8, family=FALLBACK_FONT)
     
     plt.tight_layout()
     plt.subplots_adjust(bottom=0.1)  # Make room for subfigure labels
@@ -572,9 +579,9 @@ def create_domain_strategy_interaction_heatmap(math_domain_strategy, natqa_domai
 
     # Add IEEE subfigure labels
     ax1.text(0.5, -0.15, '(a)', transform=ax1.transAxes, ha='center', va='top', 
-             fontsize=8, family='Times New Roman')
+             fontsize=8, family=FALLBACK_FONT)
     ax2.text(0.5, -0.15, '(b)', transform=ax2.transAxes, ha='center', va='top', 
-             fontsize=8, family='Times New Roman')
+             fontsize=8, family=FALLBACK_FONT)
     
     plt.tight_layout()
     pdf_f = os.path.join(dir_name, "figure_domain_strategy_interactions.pdf")
@@ -850,9 +857,9 @@ def create_figure_F_model_confidence_scatter(math_model_conf, natqa_model_conf, 
 
     # Add IEEE subfigure labels
     ax1.text(0.5, -0.4, '(a)', transform=ax1.transAxes, ha='center', va='top', 
-             fontsize=8, family='Times New Roman')
+             fontsize=8, family=FALLBACK_FONT)
     ax2.text(0.5, -0.4, '(b)', transform=ax2.transAxes, ha='center', va='top', 
-             fontsize=8, family='Times New Roman')    
+             fontsize=8, family=FALLBACK_FONT)    
     
     pdf_f = os.path.join(dir_name, "figure_F_part1_model_confidence_scatter.pdf")
     png_f = os.path.join(dir_name, "figure_F_part1_model_confidence_scatter.pdf")
@@ -983,9 +990,9 @@ def create_figure_F_model_calibration_comparison(math_model_conf, natqa_model_co
 
     # Add IEEE subfigure labels
     ax1.text(0.5, -0.3, '(a)', transform=ax1.transAxes, ha='center', va='top', 
-             fontsize=8, family='Times New Roman')
+             fontsize=8, family=FALLBACK_FONT)
     ax2.text(0.5, -0.3, '(b)', transform=ax2.transAxes, ha='center', va='top', 
-             fontsize=8, family='Times New Roman') 
+             fontsize=8, family=FALLBACK_FONT) 
         
     plt.tight_layout()
     pdf_f = os.path.join(dir_name, "figure_F_part2_model_calibration_comparison.pdf")
@@ -1233,8 +1240,10 @@ if __name__ == "__main__":
     dew_math_ds_fpath = os.path.join(DATA_DIR, "sample_dew-mathq.json")
     dew_natqa_ds_fpath = os.path.join(DATA_DIR, "sample_dew-logiq.json")
 
-    dew_math_results_fpath = os.path.join(DATA_DIR, "sample_llm_performance_results_on_dew-mathq.csv")
-    dew_natqa_results_fpath = os.path.join(DATA_DIR, "sample_llm_performance_results_on_dew-logiq.csv")
+    # dew_math_results_fpath = os.path.join(DATA_DIR, "sample_llm_performance_results_on_dew-mathq.csv")
+    # dew_natqa_results_fpath = os.path.join(DATA_DIR, "sample_llm_performance_results_on_dew-logiq.csv")
+    dew_math_results_fpath = os.path.join(DATA_DIR, "llm_performance_on_dew-mathq.csv")
+    dew_natqa_results_fpath = os.path.join(DATA_DIR, "llm_performance_on_dew-logiq.csv")
 
     # 2. Analyses
 
