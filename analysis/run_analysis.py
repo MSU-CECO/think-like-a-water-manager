@@ -764,11 +764,6 @@ def create_figure_F_model_confidence_scatter(math_model_conf, natqa_model_conf, 
         'default': '8'                   # octagon for any unmapped models
     }
     
-    # Alternative symbols if you need more options:
-    # 'P' (plus filled), 'X' (x filled), '1' (tri_down), '2' (tri_up), 
-    # '3' (tri_left), '4' (tri_right), '|' (vline), '_' (hline), 
-    # '.' (point), 'd' (thin_diamond)
-    
     # Helper function to get symbol for model
     def get_symbol(model_name):
         return manual_symbol_map.get(model_name, manual_symbol_map['default'])
