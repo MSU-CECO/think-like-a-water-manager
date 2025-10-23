@@ -1,0 +1,24 @@
+﻿Agricultural Sector Category,Agricultural Sector,LLMs,Mathematical Reasoning,Logical Reasoning,Benchmark Dataset,Authors
+Multiple,"Crop and fertilizer recommendations, pest and disease management, and crop yield prediction",GPT-3.5 finetuned,NA,Yes,NA,"Tuyizere, D; Uwase, V; Niyonkuru, M; Ndanyunzwe, G; Kabutware, M; et al."
+Multiple,"Soil, place, disease, pathogen, pesticide, and crops",BERT + LDA,NA,Yes,Proprietary,"Veena, G; Gupta, D; Kanjirangat, V"
+Multiple,"Crops products, seeding, breeding, pest and disease, manufacturing, storage",ChatGLM + Knowledge Graphs,NA,Yes,Based on BEIR dataset,"Wenlong Yi , Li Zhang, Sergey Kuzmin, Igor Gerasimov, Muhua Liu (2025) & Nandan Thakur et al (2021)"
+Multiple,"Disease control, policies, food safety, precision agriculture, research support","BERT, GPT, LLaMa, ChatGLM, Knowledge Graphs",NA,NA,NA,"Gong Ruizi, Li Xinxing (2025)"
+Crop,Crop commodity,"GPT 3.5, GPT-4, Claude v2, Multilingual BERT",NA,Yes,NA,"Chebbi, A; Kniesel, G; Abdennadher, N; Serugendo, GD; El-Maliki, T"
+Crop,Vineyard yield prediction,Mask R-CNN + Swin Transformer,Yes,NA,Embrapa WGISD dataset & Custom Dataset,"Ahmedt-Aristizabal, D; Smith, D; et al."
+Crop,Orchard management,DALLE (image generation),NA,NA,Synthetic + real orchard dataset,Sapkota R.; Meng Z.; Karkee M.
+Crop,Crop knowledge,"GPT4, GPT3.5, YandexGPT, GigaChat, Saiga",NA,NA,NA,Andreev A.; Kotsenko A.; et al.
+Crop,Crop management,"BERT, GPT, LLaMa",NA,Yes,NA,Chen Dong; Huang Yanbo (2025)
+Livestock,Livestock health,"BiLSTM, Transformers",NA,Yes,Proprietary,Zhu J.; Lacroix R.; Wade K.M.
+Plant Disease Management,Plant disease detection,"BERT, GPT",Yes,Yes,Proprietary,"Zhao, XY; Chen, BY; Ji, MX; Wang, XY; et al."
+Plant Disease Management,Plant disease management,Vision Transformers (ViTs),NA,NA,PlantVillage dataset,"Ding, WP; Abdel-Basset, M; Alrashdi, I; Hawash, H"
+Plant Disease Management,Soybean pest/disease,BERT-based models,NA,Yes,Proprietary,"Wang, PX; Zhang, C; Wang, DQ; et al."
+Plant Disease Management,Pest/disease management,"GPT-4, YOLOPC",NA,Yes,Proprietary,Qing J.; Deng X.; et al.
+Plant Disease Management,Pest/disease management, BERT + BiLSTM,NA,Yes,Proprietary,Wu S.; Zhou A.; et al.
+Plant Disease Management,Crop Disease Identification and Prescription,ChatGLM3,NA,Yes,Custom Dataset (self curated),"Yan Changqing, Liang Zeyun, et al. (2025)"
+Water management,Water management,GPT-3.5/4,NA,Yes,NA,Bento A.C.; et al.
+Water management,Urban water management,"GPT-3.5/4, RAG",NA,Yes,Proprietary,Arslan M.; Munawar S.; Riaz Z.
+Water management,Water conservancy,"T5, RoBERTa, GPT4",NA,Yes,KGL (Custom Dataset),Yang Y.; Chen S.; et al.
+Water management,Water pollution management,GPT-4,Yes,Yes,Proprietary,Nie Q.; Liu T.
+Water management,"Hydrology (floods, water quality)","Multimodal-GPT, GPT-4V, Gemini, LLaVA",NA,Yes,NA,Kadiyala L.A.; et al.
+Water management,Water resource management,GPT-3.5,Yes,Yes,EvalWater,Ren Y.; Zhang T.; Dong X.; Li W.; Wang Z.; He J.; Zhang H.; Jiao L.
+Water management,Irrigation management,"GPT-3.5, RoBERTa",NA,Yes,AgXQA,"Kpodo J, et. al."
