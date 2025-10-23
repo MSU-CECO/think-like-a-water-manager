@@ -23,9 +23,9 @@ Due to licensing and copyright issues, this repository only reflects information
 
 ## Dataset Splits Creation
 
-The DEW-LogiQ split is the continuation of the AgXQA V1 dataset, whose original data sources and creation process (e.g., curation, annotations, etc.)  have been detailed [here](https://huggingface.co/datasets/msu-ceco/agxqa_v1). Compared to AgXQA, DEW-LogiQ is a multiple-choice based QA dataset. It is available [here](). 
+The [DEW-LogiQ](https://huggingface.co/datasets/msu-ceco/dew-logiq) split is the continuation of the AgXQA V1 dataset, whose original data sources and creation process (e.g., curation, annotations, etc.)  have been detailed [here](https://huggingface.co/datasets/msu-ceco/agxqa_v1). Compared to AgXQA, DEW-LogiQ is a multiple-choice based QA dataset. 
 
-The DEW-MathQ split is generated and validated automatically given that it contains symbolic equations. The rest of the document describes its creation process.
+The [DEW-MathQ](https://huggingface.co/datasets/msu-ceco/dew-mathq-ncb) split is generated and validated automatically given that it contains symbolic equations. The rest of the document describes its creation process.
 
 
 ### Pre-requisites
