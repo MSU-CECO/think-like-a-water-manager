@@ -1,0 +1,157 @@
+
+# ======== Adapted from:  ==== #
+# ========              Irrigation Guide by USDA NRCS 1997 ==== #
+# ========              Chapter 11: Economic Evaluations ==== #
+
+
+- name: seasonal_energy_savings
+  display_name: seasonal_energy_savings
+  symbol: SES
+  definition: The seasonal energy savings in kilowatts-hours/year.
+  common_unit_id: kWh/yr
+  related_terms:
+    - seasonal_gross_irrigation_applied
+    - pressure_reduction_at_sprinkler_currently
+    - pressure_reduction_at_sprinkler_after_conversion
+    - overall_pumping_plant_efficiency
+
+- name: seasonal_gross_irrigation_applied
+  display_name: seasonal_gross_irrigation_applied
+  symbol: SGIA
+  definition: The seasonal gross irrigation that was applied.
+  common_unit_id: ac-in/ac/yr
+  related_terms:
+    - seasonal_energy_savings
+
+- name: pressure_reduction_at_sprinkler_currently
+  display_name: pressure_reduction_at_sprinkler_currently
+  symbol: PRASC
+  definition: The current pressure reduction at sprinkler.
+  common_unit_id: lb/in²
+  related_terms:
+    - seasonal_energy_savings
+
+- name: pressure_reduction_at_sprinkler_after_conversion
+  display_name: pressure_reduction_at_sprinkler_after_conversion
+  symbol: PRASA
+  definition: The pressure reduction at sprinkler after conversion.
+  common_unit_id: lb/in²
+  related_terms:
+    - seasonal_energy_savings
+
+- name: overall_pumping_plant_efficiency
+  display_name: overall_pumping_plant_efficiency
+  symbol: OPPE
+  definition: The overall pumping plant efficiency.
+  common_unit_id: percentage
+  related_terms:
+    - seasonal_energy_savings
+
+
+- name: dollars_saved_on_electric_energy_cost_per_year
+  display_name: dollars_saved_on_electric_energy_cost_per_year
+  symbol: DSOEECPY
+  definition: The amount of annual dollars saved considering a unit of electric energy cost.
+  common_unit_id: dollar
+  related_terms:
+    - seasonal_energy_savings
+    - electric_energy_cost
+
+- name: electric_energy_cost
+  display_name: electric_energy_cost
+  symbol: EEC
+  definition: The electric energy cost in $/kwh
+  common_unit_id: kilowatts_hours 
+  related_terms:
+    - seasonal_energy_savings
+    - dollars_saved_on_electric_energy_cost_per_year
+
+- name: gross_value_per_acre_expected_increase_from_irrigation
+  display_name: gross_value_per_acre_expected_increase_from_irrigation
+  symbol: GVPAEIFI
+  definition: The gross value per acre expected to increase from irrigation.
+  common_unit_id: dollar
+  related_terms:
+    - total_irrigated_area
+    - unit_price_expected_increase
+
+- name: unit_price_expected_increase
+  display_name: unit_price_expected_increase
+  symbol: UPEI
+  definition: The unit price expected for yield increase.
+  common_unit_id: dollar
+  related_terms:
+    - gross_value_per_acre_expected_increase_from_irrigation
+
+- name: increased_ownership_fixed_cost_per_acre
+  display_name: increased_ownership_fixed_cost_per_acre
+  symbol: IOFCPA
+  definition: The increased ownership fixed cost per acre.
+  common_unit_id: dollar
+  related_terms:
+    - total_irrigated_area
+    - ownership_cost_per_year
+
+- name: ownership_cost_per_year
+  display_name: ownership_cost_per_year
+  symbol: OCPY
+  definition: The ownership cost per year
+  common_unit_id: dollar
+  related_terms:
+    - increased_ownership_fixed_cost_per_acre
+    - 
+
+- name: total_increased_operating_costs_per_acre
+  display_name: total_increased_operating_costs_per_acre
+  symbol: TIOCPA
+  definition: The total increased operating costs per acre.
+  common_unit_id: dollar
+  related_terms:
+    - operating_costs_dueto_electricpump
+    - operating_costs_dueto_repair_maintenance
+    - operating_costs_others
+
+- name: operating_costs_dueto_electricpump
+  display_name: operating_costs_dueto_electricpump
+  symbol: OPCDEP
+  definition: The operating costs due to electric pump usage.
+  common_unit_id: dollar
+  related_terms:
+    - total_increased_operating_costs_per_acre
+    - 
+
+- name: operating_costs_dueto_repair_maintenance
+  display_name: operating_costs_dueto_repair_maintenance
+  symbol: OPCDRM
+  definition: The operating costs due to repair and maintenance.
+  common_unit_id: dollar
+  related_terms:
+    - total_increased_operating_costs_per_acre
+    - 
+
+- name: operating_costs_others
+  display_name: operating_costs_others
+  symbol: OPCO
+  definition: Other operating costs 9oil, fertilizer, chemicals, labor, etc.).
+  common_unit_id: dollar
+  related_terms:
+    - total_increased_operating_costs_per_acre
+    - 
+
+- name: total_average_annual_costs_increased_per_acre
+  display_name: total_average_annual_costs_increased_per_acre
+  symbol: TAACIPA
+  definition: The total average annual costs increased per acre.
+  common_unit_id: dollar
+  related_terms:
+    - increased_ownership_fixed_cost_per_acre
+    - total_increased_operating_costs_per_acre
+
+- name: expected_average_annual_increase_in_net_icome_per_acre
+  display_name: expected_average_annual_increase_in_net_icome_per_acre
+  symbol: EAAINIPA
+  definition: The expected average annual increase in net icome per acre.
+  common_unit_id: dollar
+  related_terms:
+    - total_average_annual_costs_increased_per_acre
+    - gross_value_per_acre_expected_increase_from_irrigation

@@ -1,0 +1,145 @@
+
+# ======== Adapted from:  ==== #
+# ========              Irrigation Guide by USDA NRCS 1997 ==== #
+# ========              652.0904 Irrigation system evaluation procedures ==== #
+
+
+- name: total_cost_savings_per_year
+  display_name: total_cost_savings_per_year
+  symbol: TCSPY
+  definition: The total cost savings at the end of the year asssociated with irrigation management.
+  common_unit_id: dollar
+  related_terms:
+    - total_pumping_cost_per_year
+    - total_water_purchase_cost_per_year
+    - 
+
+- name: total_pumping_cost_per_year
+  display_name: total_pumping_cost_per_year
+  symbol: TPCPY
+  definition: The total pumping cost per year.
+  common_unit_id: dollar
+  related_terms:
+    - total_cost_savings_per_year
+    - total_water_purchase_cost_per_year
+    - 
+
+- name: total_water_purchase_cost_per_year
+  display_name: total_water_purchase_cost_per_year
+  symbol: TWPCPY
+  definition: The total water purchase cost per year.
+  common_unit_id: dollar
+  related_terms:
+    - total_pumping_cost_per_year
+    - total_cost_savings_per_year
+    - cost_per_acre_foot
+    - acrefeet_saved_per_year
+    - total_irrigated_area
+    - 
+
+
+- name: cost_per_acre_foot 
+  display_name: cost_per_acre_foot
+  symbol: CPAF
+  definition: Cost per acre foot.
+  common_unit_id: dollar
+  related_terms:
+    - acrefeet_saved_per_year
+    - total_water_purchase_cost_per_year
+    - 
+
+- name: acrefeet_saved_per_year
+  display_name: acrefeet_saved_per_year
+  symbol: AFSPY
+  definition: The value in acre-feeet saved per year. 
+  common_unit_id: acreft_per_year
+  related_terms:
+    - total_water_purchase_cost_per_year
+    - cost_per_acre_foot
+    - present_gross_irrigation_applied_per_year
+    - potential_gross_irrigation_applied_per_year
+    - 
+
+
+- name: present_gross_irrigation_applied_per_year
+  display_name: present_gross_irrigation_applied_per_year
+  symbol: PEGIAPY
+  definition: The present gross irrigation amount applied per year.
+  common_unit_id: inches
+  related_terms:
+    - potential_gross_irrigation_applied_per_year
+    - acrefeet_saved_per_year
+    - present_average_net_application_per_irrigation
+    - number_of_irrigations_for_year
+    - present_gross_depth_applied
+    - 
+
+- name: potential_gross_irrigation_applied_per_year
+  display_name: potential_gross_irrigation_applied_per_year
+  symbol: POGIAPY
+  definition: The potential gross irrigation amount applied per year.
+  common_unit_id: inches
+  related_terms:
+    - present_gross_irrigation_applied_per_year
+    - acrefeet_saved_per_year
+    - annual_net_irrigation_requirement
+    - potential_application_efficiency
+    - 
+
+- name: annual_net_irrigation_requirement
+  display_name: annual_net_irrigation_requirement
+  symbol: ANIR
+  definition: The annual net irrigation requirement.
+  common_unit_id: inches
+  related_terms:
+    - potential_application_efficiency
+    - potential_gross_irrigation_applied_per_year
+    - 
+
+
+- name: potential_application_efficiency
+  display_name: potential_application_efficiency
+  symbol: PAE
+  definition: The potential application efficiency of the irrigation system/equipment.
+  common_unit_id: percentage
+  related_terms:
+    - annual_net_irrigation_requirement
+    - potential_gross_irrigation_applied_per_year
+    - 
+
+
+- name: present_average_net_application_per_irrigation
+  display_name: present_average_net_application_per_irrigation
+  symbol: PANAPI
+  definition: The present average net application per irrigation.
+  common_unit_id: inches
+  related_terms:
+    - irrigation_application_efficiency
+    - present_gross_irrigation_applied_per_year
+    - 
+
+- name: number_of_irrigations_for_year
+  display_name: number_of_irrigations_for_year
+  symbol: NIRF
+  definition: Total number of irrigations applied in a year
+  common_unit_id: dimensionless_unit
+  related_terms:
+    - present_gross_irrigation_applied_per_year
+    - present_average_net_application_per_irrigation
+    - present_gross_depth_applied
+    - 
+
+
+- name: present_gross_depth_applied
+  display_name: present_gross_depth_applied
+  symbol: PGDA
+  definition: The current gross depth of applied irrigation.
+  common_unit_id: inches
+  related_terms:
+    - present_gross_irrigation_applied_per_year
+    - number_of_irrigations_for_year
+    - 
+
+
+
+

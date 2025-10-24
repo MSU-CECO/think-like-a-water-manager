@@ -1,0 +1,133 @@
+
+# ======== Adapted from:  ==== #
+# ========              Irrigation Guide by USDA NRCS 1997 ==== #
+# ========              Chapter 11: Economic Evaluations ==== #
+
+- id: eq_seasonal_energy_savings
+  name: seasonal_energy_savings
+  latex: 
+  variables:
+    - name: SES
+      description: seasonal_energy_savings
+      unit_id: kWh/yr
+    - name: TIA
+      description: total_irrigated_area
+      unit_id: acres        
+    - name: SGIA
+      description: seasonal_gross_irrigation_applied
+      unit_id: ac-in/ac/yr
+    - name: PRASC
+      description: pressure_reduction_at_sprinkler_currently
+      unit_id: lb/in²
+    - name: PRASA
+      description: pressure_reduction_at_sprinkler_after_conversion
+      unit_id: lb/in²
+    - name: OPPE
+      description: overall_pumping_plant_efficiency
+      unit_id: dimensionless_unit
+  dependencies:
+    -   
+
+- id: eq_dollars_saved_on_electric_energy_cost_per_year
+  name: dollars_saved_on_electric_energy_cost_per_year
+  latex: 
+  variables:
+    - name: DSOEECPY
+      description: dollars_saved_on_electric_energy_cost_per_year
+      unit_id: dollar
+    - name: SES
+      description: seasonal_energy_savings
+      unit_id: kWh/yr
+    - name: EEC
+      description: electric_energy_cost
+      unit_id: kWh  
+  dependencies:
+    - eq_seasonal_energy_savings  
+
+
+- id: eq_gross_value_per_acre_expected_increase_from_irrigation
+  name: gross_value_per_acre_expected_increase_from_irrigation
+  latex: 
+  variables:
+    - name: GVPAEIFI
+      description: gross_value_per_acre_expected_increase_from_irrigation
+      unit_id: dollar
+    - name: TIA
+      description: total_irrigated_area
+      unit_id: acres  
+    - name: UPEI
+      description: unit_price_expected_increase
+      unit_id: dollar  
+  dependencies:
+    -   
+
+- id: eq_increased_ownership_fixed_cost_per_acre
+  name: increased_ownership_fixed_cost_per_acre
+  latex: 
+  variables:
+    - name: IOFCPA
+      description: increased_ownership_fixed_cost_per_acre
+      unit_id: dollar
+    - name: TIA
+      description: total_irrigated_area
+      unit_id: acres  
+    - name: OCPY
+      description: ownership_cost_per_year
+      unit_id: dollar 
+  dependencies:
+    -       
+
+
+- id: eq_total_increased_operating_costs_per_acre
+  name: total_increased_operating_costs_per_acre
+  latex: 
+  variables:
+    - name: TIOCPA
+      description: total_increased_operating_costs_per_acre
+      unit_id: dollar
+    - name: OPCDEP
+      description: operating_costs_dueto_electricpump
+      unit_id: dollar
+    - name: OPCDRM
+      description: operating_costs_dueto_repair_maintenance
+      unit_id: dollar
+    - name: OPCO
+      description: operating_costs_others
+      unit_id: dollar
+  dependencies:
+    -   
+
+- id: eq_total_average_annual_costs_increased_per_acre
+  name: total_average_annual_costs_increased_per_acre
+  latex: 
+  variables:
+    - name: TAACIPA
+      description: total_average_annual_costs_increased_per_acre
+      unit_id: dollar
+    - name: IOFCPA
+      description: increased_ownership_fixed_cost_per_acre
+      unit_id: dollar
+    - name: TIOCPA
+      description: total_increased_operating_costs_per_acre
+      unit_id: dollar
+  dependencies:
+    - eq_increased_ownership_fixed_cost_per_acre  
+    - eq_total_increased_operating_costs_per_acre  
+
+
+- id: eq_expected_average_annual_increase_in_net_icome_per_acre
+  name: expected_average_annual_increase_in_net_icome_per_acre
+  latex: 
+  variables:
+    - name: EAAINIPA
+      description: expected_average_annual_increase_in_net_icome_per_acre
+      unit_id: dollar
+    - name: GVPAEIFI
+      description: gross_value_per_acre_expected_increase_from_irrigation
+      unit_id: dollar
+    - name: TAACIPA
+      description: total_average_annual_costs_increased_per_acre
+      unit_id: dollar 
+  dependencies:
+    - eq_gross_value_per_acre_expected_increase_from_irrigation
+    - eq_total_average_annual_costs_increased_per_acre  

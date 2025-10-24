@@ -1,0 +1,131 @@
+
+# ======== Adapted from:  ==== #
+# ========              Irrigation Guide by USDA NRCS 1997 ==== #
+# ========              652.0904 Irrigation system evaluation procedures ==== #
+
+# see pg 9-55
+- id: eq_total_cost_savings_per_year_based_on_water_and_pumping
+  name: total_cost_savings_per_year_based_on_water_and_pumping
+  latex: 
+  variables:
+    - name: TCSPY
+      description: total_cost_savings_per_year
+      unit_id: dollar
+    - name: TPCPY
+      description: total_pumping_cost_per_year
+      unit_id: dollar
+    - name: TWPCPY
+      description: total_water_purchase_cost_per_year
+      unit_id: dollar 
+  dependencies:
+    - eq_total_water_purchase_cost_per_year  
+    - eq_total_pumping_cost_per_year_based_on_fuel 
+    -   
+
+- id: eq_total_water_purchase_cost_per_year
+  name: total_water_purchase_cost_per_year
+  latex: 
+  variables:
+    - name: TWPCPY
+      description: total_water_purchase_cost_per_year
+      unit_id: dollar 
+    - name: CPAF
+      description: cost_per_acre_foot
+      unit_id: dollar
+    - name: AFSPY 
+      description: acrefeet_saved_per_year 
+      unit_id: acreft_per_year 
+  dependencies:
+    - eq_total_annual_water_saved
+
+- id: eq_total_pumping_cost_per_year_based_on_fuel
+  name: total_pumping_cost_per_year_based_on_fuel
+  latex: 
+  variables:
+    - name: TPCPY
+      description: total_pumping_cost_per_year
+      unit_id: dollar 
+    - name: FCPAF
+      description: fuel_cost_per_acre_foot
+      unit_id: dollar
+    - name: AFSPY 
+      description: acrefeet_saved_per_year 
+      unit_id: acreft_per_year 
+  dependencies:
+    - eq_total_annual_water_saved
+
+
+- id: eq_total_annual_water_saved
+  name: total_annual_water_saved
+  latex: 
+  variables:
+    - name: AFSPY 
+      description: acrefeet_saved_per_year 
+      unit_id: acreft_per_year 
+    - name: PEGIAPY
+      description: present_gross_irrigation_applied_per_year
+      unit_id: inches
+    - name: POGIAPY
+      description: potential_gross_irrigation_applied_per_year
+      unit_id: inches  
+    - name: TIA
+      description: total_irrigated_area
+      unit_id: acres         
+  dependencies:
+    -  eq_present_gross_irrigation_applied_per_year
+    -  eq_potential_gross_irrigation_applied_per_year
+
+- id: eq_potential_gross_irrigation_applied_per_year
+  name: potential_gross_irrigation_applied_per_year
+  latex: 
+  variables:
+    - name: POGIAPY
+      description: potential_gross_irrigation_applied_per_year
+      unit_id: inches  
+    - name: ANIR
+      description: annual_net_irrigation_requirement
+      unit_id: inches
+    - name: PAE
+      description: potential_application_efficiency
+      unit_id: percentage  
+  dependencies:
+    -   
+
+
+- id: eq_present_gross_irrigation_applied_per_year
+  name: present_gross_irrigation_applied_per_year
+  latex: 
+  variables:
+    - name: PEGIAPY
+      description: present_gross_irrigation_applied_per_year
+      unit_id: inches
+    - name: PANAPI
+      description: present_average_net_application_per_irrigation
+      unit_id: inches
+    - name: PIEA
+      description: present_irrigation_application_efficiency
+      unit_id: percentage
+    - name: NIRF
+      description: number_of_irrigations_for_year
+      unit_id: dimensionless_unit
+  dependencies:
+    -   
+
+
+- id: eq_present_gross_irrigation_applied_per_year_using_depth_applied
+  name: present_gross_irrigation_applied_per_year_using_depth_applied
+  latex: 
+  variables:
+    - name: PEGIAPY
+      description: present_gross_irrigation_applied_per_year
+      unit_id: inches
+    - name: PGDA
+      description: present_gross_depth_applied
+      unit_id: inches
+    - name: NIRF
+      description: number_of_irrigations_for_year
+      unit_id: dimensionless_unit
+  dependencies:
+    -   
+
+
