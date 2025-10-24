@@ -1,0 +1,8 @@
+{
+  "problems_path": "./annotations/outputs_json/sample_problems_definition.json",
+  "output_file": "./annotations/outputs_json/dew-mathq-ds.json",
+  "variations": 1,
+  "neo4j_uri": "neo4j://localhost:7687",
+  "neo4j_user": "neo4j",
+  "neo4j_password": ""
+}
